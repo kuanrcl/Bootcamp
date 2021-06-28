@@ -3,16 +3,16 @@
 
 Server B: 
 
-# mysql-gpl (3306)
-# mysql-commercial (3307, 3308)
-# Master
+* mysql-gpl (3306)
+* mysql-commercial (3307, 3308)
+* Master
 
 Server A:
 
-# Workbench
-# Monitor
-# mysql-commercial (3307)
-# Slave
+* Workbench
+* Monitor
+* mysql-commercial (3307)
+* Slave
 
 ## Server B
 ```
