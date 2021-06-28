@@ -1,5 +1,5 @@
 # Bootcamp
-! Day 1a
+## Day 1a
 
 Server B: 
 
@@ -14,7 +14,7 @@ Server A:
 # mysql-commercial (3307)
 # Slave
 
-!! Server B
+## Server B
 ```
 cat /etc/redhat-release
 sudo rpm -qa | grep mysql
@@ -49,7 +49,7 @@ mysql -uadmin -p -h localhost
 
 ```
 
-!! Server A + Server B 
+## Server A + Server B 
 ```
 sudo groupadd oracle
 sudo useradd -r -g oracle -s /bin/false oracle
@@ -62,7 +62,7 @@ sudo mkdir -p /mysql/ /mysql/etc02 /mysql/data02
 sudo mkdir -p /mysql/log02 /mysql/temp02 /mysql/binlog02
 ```
 
-!! Server A (Workbench)
+##Server A (Workbench)
 
 ```
 sudo yum install /workshop/linux/mysql-community/mysql80-community-release-el7-3.noarch.rpm
@@ -73,7 +73,7 @@ sudo yum install ./mysql-workbench-commercial-8.0.20-1.1.el7.x86_64.rpm
 
 ```
 
-!! MySQL Commercial on Server A
+## MySQL Commercial on Server A
 
 ```
 cd /mysql/
@@ -125,7 +125,7 @@ performance_schema_consumer_events_statements_history_long = ON
 plugin-load=thread_pool.so
 ```
 
-!! MySQL Commercial on Server B
+## MySQL Commercial on Server B
 
 ```
 cd /mysql/
@@ -231,7 +231,7 @@ sudo chmod -R 770 /mysql/etc02
 ```
 
 
-!! Server B
+## Server B
 ```
 sudo /mysql/mysql-latest/bin/mysqld --defaults-file=/mysql/etc01/my.cnf --initialize --user=oracle
 sudo /mysql/mysql-latest/bin/mysqld --defaults-file=/mysql/etc01/my.cnf --user=oracle &
@@ -291,7 +291,7 @@ SHOW FULL PROCESSLIST;
 
 
 
-! Day 2a
+# Day 2a
 
 ```
 mysql -uadmin -p -h 127.0.0.1 -P 3307
@@ -331,7 +331,7 @@ SHOW DATABASES;
 alter user 'appuser'@<myip> identified by 'Welcome1!';
 ```
 
-!! Firewall
+## Firewall
 
 ```
 root
@@ -399,7 +399,7 @@ SELECT MODE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_USERS WHERE USERHOST = 'fwtes
 SELECT RULE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_WHITELIST WHERE USERHOST = 'fwtest@%';
 ```
 
-!! Audit
+## Audit
 
 ```
 plugin-load=thread_pool.so;audit_log.so
@@ -419,7 +419,7 @@ SELECT * FROM city limit 25;
 SELECT Code, Name, Region FROM country WHERE population > 200000;
 ```
 
-!! Roles
+## Roles
 
 ```
 mysql -u root -p -h 127.0.0.1 -P 3307
@@ -438,7 +438,7 @@ mysql -uappuser -p -P3307 -h[internal ip]
 SET ROLE ALL;
 ```
 
-!! Masking
+## Masking
 
 ```
 mysql -uroot -p -h 127.0.0.1 -P 3307
@@ -468,9 +468,9 @@ SELECT gen_rnd_us_phone();
 SELECT gen_rnd_email();
 ```
 
-! Day 1b
+# Day 1b
 
-!! Server B
+## Server B
 ```
 vi my.cnf
 gtid-mode=on
@@ -565,7 +565,7 @@ db.posts.createIndex('myIndex', {fields: [{field: "$.title", type: "TEXT(20)"}]}
 session.sql("show create table posts")
 ```
 
-! Day 2b
+# Day 2b
 
 ```
 #serverA
@@ -589,7 +589,7 @@ sudo /etc/init.d/mysql-monitor-agent start
 
 ```
 
-!! Backup
+## Backup
 
 ```
 #ServerB
@@ -660,7 +660,7 @@ sudo /mysql/mysql-latest/bin/mysqld --defaults-file=/mysql/etc01/my.cnf --user=o
 
 ```
 
-! Day 3a
+# Day 3a
 
 
 ```
@@ -751,7 +751,7 @@ SELECT * FROM newdb.t1;
 
 ```
 
-! Day 3b
+# Day 3b
 
 ```
 # Server B (Primary)
